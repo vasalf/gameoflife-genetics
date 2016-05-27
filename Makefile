@@ -13,7 +13,7 @@ OBJS=$(foreach subd,$(SUBDIRS),$(foreach suf,$(SUFFIXES),$(subst $(SRCDIR),$(OBJ
 
 all: test
 
-test: $(OBJS)
+test: $(OBJS) Makefile
 	$(LD) $(CXXFLAGS) $(OBJS) -o test
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp Makefile | $(OBJSUBDIRS)
