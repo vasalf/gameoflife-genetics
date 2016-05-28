@@ -27,22 +27,19 @@ public:
                              std::ptrdiff_t> range;
     
     virtual void setPosition(range r) = 0;
-    virtual int size() const = 0;
     virtual bool isAlive(int i, int j) const = 0;
     virtual void nextTurn() = 0;
 };
 
 class GOLPosition : public GOLAbstractPosition {
 private:
-    int field_size;
     std::set<std::pair<int, int> > alive;
 
 public:
-    GOLPosition(int _size);
+    GOLPosition();
 
     virtual void setPosition(range r);
     
-    int size() const;
     bool isAlive(int i, int j) const;
     void nextTurn();
 };

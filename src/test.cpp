@@ -24,7 +24,7 @@ using namespace std;
 
 int main() {
     string trash;
-    GOLPosition pos(10);
+    GOLPosition pos;
     
     vector<pair<int, int> > glider = {
         make_pair(1, 2),
@@ -36,8 +36,8 @@ int main() {
     pos.setPosition(GOLAbstractPosition::range(glider.begin(), glider.end()));
 
     while (true) {
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
+        for (int i = 9; i > -9; i--) {
+            for (int j = -9; j < 10; j++) {
                 if (pos.isAlive(i, j))
                     cout << "#";
                 else
